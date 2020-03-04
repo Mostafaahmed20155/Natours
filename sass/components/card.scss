@@ -1,5 +1,6 @@
 .card {
     perspective: 150rem;
+    animation: 150rem;
     -moz-animation: 150rem;
     position: relative;
     height: 50rem;
@@ -161,6 +162,52 @@
     }
 
 
+
+
+
+
+    @include respond (tab-port) {
+       
+        height: auto;
+        background-color: $color-white;
+        box-shadow: 0 2rem 6rem rgba($color-black, .1);
+
+        &__side {
+            height: auto;
+            transition: all .8s;
+            position: relative;   
+            border-radius: 3px;
+            box-shadow: none;
+
+            &--back {
+                transform: rotateY(0deg);
+                background-image: linear-gradient(to right bottom, 
+                $color-secondary-light,
+                $color-secondary-dark);
+                clip-path: polygon(0% 15% , 0% 100%, 100% 100%, 100% 0%);
+            }
+        }
+        
+        &:hover &__side--front {
+            transform: rotateY(0eg);
+        }
+    
+        &:hover &__side--back {
+            transform: rotateY(0deg);
+        }
+        &__cta {
+            position: relative;
+            top: 0;
+            right: 0;
+            transform: translate(0,0);
+            text-align: center;
+            align-items: center;
+            padding: 7rem 4rem 7rem 4rem;
+            width: 100%;
+        }
+    
+    
+    }
 
 }
 
