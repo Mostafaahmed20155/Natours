@@ -2,4 +2,5 @@
 
 In terminal:
 
-    npm install 
+    live-server 
+    
